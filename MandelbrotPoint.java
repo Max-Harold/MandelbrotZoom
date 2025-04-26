@@ -1,0 +1,34 @@
+public class MandelbrotPoint {
+
+    private double maxRad = 2.0;
+    public double a;
+    public double b;
+
+    public double x;
+    public double y;
+
+    public MandelbrotPoint(double a, double b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public MandelbrotPoint() {
+        a = 0;
+        b = 0;
+    }
+    public int iters(int maxIters) {
+        x = 0;
+        y = 0;
+        int i = 0;
+        while (x * x + y * y <= maxRad * maxRad && ++i < maxIters) {
+            double xTmp = x * x - y * y + a;
+            y = 2 * x * y + b;
+            x = xTmp;
+        }
+        return i;
+    }
+
+    public String toString() {
+        return "("+a+", "+b+"i)";
+    }
+}
