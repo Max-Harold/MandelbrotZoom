@@ -26,7 +26,7 @@ public class MandelbrotZoom extends JFrame {
 
     private int maxIters = 200;
 
-    private int lowerIter = 1;
+    private int lowerIter = 2;
     private int upperIter = 1000;
 
     private MandelbrotRenderer mRenderer;
