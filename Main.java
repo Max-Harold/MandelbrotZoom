@@ -58,12 +58,13 @@ public class Main {
                 } else if (tabs.getSelectedIndex() == mandelbrotIndex && bookmarkManager.areThereChanges())  {
                     int result = JOptionPane.showConfirmDialog(frame, "You have unsaved changes. Switch tabs anyway?", "Unsaved changes", JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
-                        bookmarkManager.saveBookmarks();
+                        bookmarkManager.loadBookmarks();
+                        bookmarkManager.disableButton();
                     } else {
-                        tabs.setSelectedIndex(bookmarksIndex);
                         bookmarkManager.enableButton();
+                        tabs.setSelectedIndex(bookmarksIndex);   
                     }
-                } else {
+                } else if (tabs.getSelectedIndex() == bookmarksIndex && !bookmarkManager.areThereChanges()) {
                     bookmarkManager.loadBookmarks();
                     bookmarkManager.disableButton();
                 }
