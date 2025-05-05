@@ -1,3 +1,7 @@
+import java.util.Arrays;
+
+import javax.print.DocFlavor.STRING;
+
 public class MandelbrotPoint {
 
     private double maxRad = 2.0;
@@ -29,6 +33,12 @@ public class MandelbrotPoint {
     }
 
     public String toString() {
-        return "("+a+", "+b+"i)";
+        return "("+a+","+b+"i)";
+    }
+
+    public static MandelbrotPoint parseString(String s) {
+        int len = s.length();
+        String[] numberStrings = s.substring(1, len-2).split(",");
+        return new MandelbrotPoint(Double.parseDouble(numberStrings[0]), Double.parseDouble(numberStrings[1]));
     }
 }

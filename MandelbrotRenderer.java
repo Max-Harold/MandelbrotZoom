@@ -166,7 +166,7 @@ public class MandelbrotRenderer extends JPanel {
         renderMandelbrot();
     }
 
-    private void renderMandelbrot() {
+    public void renderMandelbrot() {
         double w = getWidth();
         double h = getHeight();
 
@@ -192,5 +192,17 @@ public class MandelbrotRenderer extends JPanel {
         if (isDrawingBox) {
             g2d.drawImage(boxImage, 0, 0, getWidth(), getHeight(), this);
         }
+    }
+
+    public void setBoundsToBookmark(Bookmark b) {
+        lowerBounds = b.lower;
+        upperBounds = b.upper;
+    }
+
+    public MandelbrotPoint getLowerBounds() {
+        return lowerBounds;
+    }
+    public MandelbrotPoint getUpperBounds() {
+        return upperBounds;
     }
 }
