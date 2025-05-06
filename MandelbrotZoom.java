@@ -51,11 +51,11 @@ public class MandelbrotZoom extends JPanel {
 
     private MandelbrotRenderer mRenderer;
 
-    private ColorChooser colorfulChooser = (p) -> {
+    private ColorChooser colorfulChooser = (p) ->  {
         int iters = p.iters(maxIters);
         if (iters == maxIters) return 0xFF000000;
-        float smooth = iters + 1 - (float)(Math.log(Math.log(p.x*p.x + p.y*p.y)) / Math.log(2));
-        float hue = (float) (0.95f + 10 * smooth / (float)maxIters) % 1.0f;
+        
+        float hue = (float) (0.95f +  10 * (float)iters / (float)maxIters) % 1.0f;
         return Color.getHSBColor(hue, 0.3f, 1f).getRGB();
     };
 

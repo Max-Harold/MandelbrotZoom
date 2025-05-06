@@ -23,7 +23,7 @@ public class Main {
     private static int bookmarksIndex;
     private static int mandelbrotIndex;
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Mandelbrot Set Zoom");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setPreferredSize(new Dimension(windowWidth, windowHeight));
