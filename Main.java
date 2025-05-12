@@ -2,12 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Arrays;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -25,12 +19,9 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Mandelbrot Set Zoom");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         frame.setPreferredSize(new Dimension(windowWidth, windowHeight));
         frame.setLayout(new BorderLayout());
         frame.setResizable(false);
-        
-        
 
         JButton saveChanges = new JButton("Save Changes");
         saveChanges.setFont(new Font("Ariel", Font.BOLD, 35));
@@ -41,7 +32,6 @@ public class Main {
 
         BookmarkManager bookmarkManager = new BookmarkManager(saveChanges, tabs);
 
-        
         tabs.setFont(new Font("Ariel", Font.PLAIN, 20));
         tabs.addChangeListener(new ChangeListener() {
             @Override

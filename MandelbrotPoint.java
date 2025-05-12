@@ -1,7 +1,3 @@
-import java.util.Arrays;
-
-import javax.print.DocFlavor.STRING;
-
 public class MandelbrotPoint {
 
     private double maxRad = 2.0;
